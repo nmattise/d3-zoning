@@ -1,0 +1,56 @@
+<!doctype html>
+<html ng-app='app'>
+
+<head>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/d3/d3.min.js"></script>
+  <script src="bower_components/angular-d3/dist/angular-d3.min.js"></script>
+</head>
+
+<body ng-controller='mainController'>
+  {{test}}
+  <svg viewBox="0 0 1024 768">
+    <path d="M 100 100 L 300 100 L 200 300 z" fill="red" stroke="blue" stroke-width="3" />
+    <g d3 d3-data="squares" d3-renderer="squareRenderer"></g>
+  </svg>
+
+  <script type="text/javascript">
+    angular.module('app', ['d3'])
+      .controller('mainController', function($scope) {
+        $scope.test = 'Where am I';
+        $scope.squares = [{
+          "x": 0,
+          "y": 0
+        }, {
+          "x": 0,
+          "y": 15
+        }, {
+          "x": 50,
+          "y": 15
+        }, {
+          "x": 50,
+          "y": 0
+        }];
+        $scope.squareRenderer = function(el, data) {
+          var lineFunction = d3.svg.line()
+            .x(function(d) {
+              console.log(d);
+              return d.x;
+            })
+            .y(function(d) {
+              return d.y;
+            })
+            .interpolate('linear');
+          // Set the data for some circles
+          var d = el.selectAll('rect').data($scope.squares);
+          d.enter().append('path')
+            .attr('d', lineFunction(data))
+            .attr("stroke-width", 2)
+            .attr("stroke", "black")
+            // .attr("fill", "none");
+        };
+      })
+  </script>
+</body>
+
+</html>
