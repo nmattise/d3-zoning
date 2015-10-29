@@ -7,9 +7,8 @@
   <script type="text/javascript" src="./bundled.js"></script>
   <script src="./app.js"></script>
   <script src="./d3.js"></script>
-  <script src="./d3Polygon.js"></script>
   <script src="./d3Grid.js"></script>
-  <script src="./polyController.js"></script>
+  <script src="./groundupController.js"></script>
   <style media="screen">
     .axis path,
     .axis line {
@@ -34,22 +33,11 @@
 </head>
 
 <body ng-controller="polyController">
-  <svg width="300px" height="300px" style="border-style:solid">
 
-    <g ng-repeat="z in zones" d3-bars data="z" offset="boundingBox" on-click="d3OnClick(item)"></g>
-
-  </svg>
-  <br>
-  <d3-grid data='zones' offset="boundingBox">
+  <d3-grid data='dataset'>
 
   </d3-grid>
-  {{boundingBox}} {{center}}
 
-  <div ng-repeat="pt in zones[0].polygon.points">
-    x:
-    <input type="number" ng-model="pt.x"> y:
-    <input type="number" ng-model="pt.y">
-  </div>
 </body>
 
 </html>
