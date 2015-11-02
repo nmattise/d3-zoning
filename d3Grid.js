@@ -6,7 +6,7 @@
       return {
         restrict: 'EA',
         scope: {
-          data: "="
+          data: '='
         },
         link: function(scope, iElement, iAttrs) {
           // console.log(scope.data);
@@ -30,6 +30,8 @@
               return d.y;
             })])
             .range([height, 0]);
+          console.log(xScale(1))
+          console.log(yScale(1))
           var xAxis = d3.svg.axis()
             .scale(xScale)
             .orient("bottom")

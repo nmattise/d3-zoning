@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app="app">
+
+<head>
+  <script src="../bower_components/angular/angular.min.js"></script>
+  <!-- Polygon.js -->
+  <script type="text/javascript" src="../bundled.js"></script>
+  <!-- Angular Files-->
+  <script src="./app.js"></script>
+  <script src="./controller.js"></script>
+  <script src="./viewer.js"></script>
+  <script src="../d3.js"></script>
+  <style media="screen">
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: black;
+    }
+
+    .line {
+      fill: none;
+      stroke: blue;
+      stroke-width: 2px;
+    }
+
+    .tick text {
+      font-size: 12px;
+    }
+
+    .tick line {
+      opacity: 0.2;
+    }
+  </style>
+</head>
+
+<body ng-controller="mainController">
+{{bounding}}
+{{size}}
+<d3-view polygon="polygon" zones="zones" bounding="bounding" size="size"></d3-view>
+<input type="number" ng-model="zones[0].polygon.points[0].x">
+<input type="number" ng-model="zones[0].polygon.points[0].y">
+</body>
+
+</html>

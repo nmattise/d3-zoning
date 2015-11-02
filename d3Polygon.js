@@ -18,7 +18,7 @@
             x: (iElement[0].parentElement.clientWidth - 5) / scope.offset.w,
             y: (iElement[0].parentElement.clientHeight - 5) / scope.offset.h
           };
-          // console.log(scaler);
+          console.log(scaler);
           // watch for data changes and re-render
           scope.$watch('data', function(newVals, oldVals) {
             return scope.render(newVals);
