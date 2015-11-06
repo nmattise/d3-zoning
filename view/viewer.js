@@ -8,7 +8,8 @@
           polygon: "=",
           zones: "=",
           bounding: "=",
-          size: "="
+          size: "=",
+          color: "="
         },
         link: function(scope, iElement, iAttrs) {
 
@@ -63,16 +64,22 @@
             .attr("class", "y axis")
             .call(yAxis);
           //Draw Zones
-          scope.render = function(zones){
+          scope.render = function(zones, color) {
             svg.selectAll("path").remove();
             var fill;
-            if (zones.type == 'Perimeter') {
-              fill = 'green';
-            } else {
-              fill = 'blue';
-            }
+            console.log(color);
             for (var i = 0; i < zones.length; i++) {
-              console.log(zones[i].polygon.points);
+              if (color == 'zones') {
+                if (zones[i].zone == 'Perimeter') {
+                  fill = '#2ECC40';
+                } else {
+                  fill = '#001f3f';
+                }
+              } else if (color == 'spaceType') {
+                fill = '#FF4136';
+              }
+
+              // console.log(zones[i].polygon.points);
               svg.append('path')
                 .attr('d', line(zones[i].polygon.points))
                 .attr("stroke-width", 1)
@@ -80,9 +87,14 @@
                 .attr("fill", fill);
             }
           };
-
+          console.log(scope.color);
           scope.$watch('zones', function(newVals, oldVals) {
-            return scope.render(newVals);
+            return scope.render(newVals, scope.color);
+          }, true);
+          scope.$watch('color', function(newVals, oldVals) {
+            console.log(newVals);
+            console.log(oldVals);
+            return scope.render(scope.zones, newVals);
           }, true);
 
         }

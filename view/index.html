@@ -34,11 +34,14 @@
 </head>
 
 <body ng-controller="mainController">
-{{bounding}}
-{{size}}
-<d3-view polygon="polygon" zones="zones" bounding="bounding" size="size"></d3-view>
-<input type="number" ng-model="zones[0].polygon.points[0].x">
-<input type="number" ng-model="zones[0].polygon.points[0].y">
+  <h5>Render By:</h5>
+  <input type="radio" name="color" value="zones" ng-model="color">Zones
+  <input type="radio" name="color" value="spaceType" ng-model="color">Space Type
+  <br>
+  <d3-view polygon="polygon" zones="zones" bounding="bounding" size="size" color="color"></d3-view>
+  <br>
+  <input type="number" ng-model="zones[0].polygon.points[0].x">
+  <input type="number" ng-model="zones[0].polygon.points[0].y">
 </body>
 
 </html>

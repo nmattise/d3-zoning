@@ -3,7 +3,7 @@
 
   angular.module('app.controllers')
     .controller('mainController', ['$scope', function($scope) {
-
+      $scope.color = 'zones';
       $scope.polygon = {
         "points": [{
           "y": 0,
@@ -72,7 +72,8 @@
         },
         "spaceType": "OpenOffice",
         "area": 472.4493977078962,
-        "percent": 0.013281951643049824
+        "percent": 0.013281951643049824,
+        "zone":'Perimeter'
       }, {
         "polygon": {
           "points": [{
@@ -91,7 +92,8 @@
         },
         "spaceType": "OpenOffice",
         "area": 1118.7466898547414,
-        "percent": 0.031451282417889276
+        "percent": 0.031451282417889276,
+        "zone":'Perimeter'
       }, {
         "polygon": {
           "points": [{
@@ -110,7 +112,8 @@
         },
         "spaceType": "OpenOffice",
         "area": 472.4514725308464,
-        "percent": 0.013282009972467165
+        "percent": 0.013282009972467165,
+        "zone":'Perimeter'
       }, {
         "polygon": {
           "points": [{
@@ -129,7 +132,8 @@
         },
         "spaceType": "OpenOffice",
         "area": 607.8108085557121,
-        "percent": 0.017087361750329218
+        "percent": 0.017087361750329218,
+        "zone":'Perimeter'
       }, {
         "polygon": {
           "points": [{
@@ -148,7 +152,8 @@
         },
         "spaceType": "OpenOffice",
         "area": 848.0300128689933,
-        "percent": 0.023840634949321763
+        "percent": 0.023840634949321763,
+        "zone":'Perimeter'
       }, {
         "polygon": {
           "points": [{
@@ -167,7 +172,8 @@
         },
         "spaceType": "OpenOffice",
         "area": 607.810809912606,
-        "percent": 0.017087361788475523
+        "percent": 0.017087361788475523,
+        "zone":'Perimeter'
       }, {
         "polygon": {
           "points": [{
@@ -186,7 +192,8 @@
         },
         "spaceType": "OpenOffice",
         "area": 472.45147171159624,
-        "percent": 0.013282009949435618
+        "percent": 0.013282009949435618,
+        "zone":'Perimeter'
       }, {
         "polygon": {
           "points": [{
@@ -205,7 +212,8 @@
         },
         "spaceType": "OpenOffice",
         "area": 1118.7466898818316,
-        "percent": 0.03145128241865086
+        "percent": 0.03145128241865086,
+        "zone":'Perimeter'
       }, {
         "polygon": {
           "points": [{
@@ -224,7 +232,8 @@
         },
         "spaceType": "OpenOffice",
         "area": 472.44939872981405,
-        "percent": 0.013281951671778959
+        "percent": 0.013281951671778959,
+        "zone":'Perimeter'
       }, {
         "polygon": {
           "points": [{
@@ -243,7 +252,8 @@
         },
         "spaceType": "OpenOffice",
         "area": 607.8110797074364,
-        "percent": 0.017087369373207154
+        "percent": 0.017087369373207154,
+        "zone":'Perimeter'
       }, {
         "polygon": {
           "points": [{
@@ -262,7 +272,8 @@
         },
         "spaceType": "OpenOffice",
         "area": 848.0213281587439,
-        "percent": 0.023840390796398454
+        "percent": 0.023840390796398454,
+        "zone":'Perimeter'
       }, {
         "polygon": {
           "points": [{
@@ -281,7 +292,8 @@
         },
         "spaceType": "OpenOffice",
         "area": 607.8110810506346,
-        "percent": 0.017087369410968434
+        "percent": 0.017087369410968434,
+        "zone":'Perimeter'
       }, {
         "polygon": {
           "points": [{
@@ -324,7 +336,8 @@
         },
         "spaceType": "OpenOffice",
         "area": 27316.191102680852,
-        "percent": 0.7679390238580277
+        "percent": 0.7679390238580277,
+        "zone":'Core'
       }];
     }]);
 
