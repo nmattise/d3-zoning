@@ -33,6 +33,7 @@
       };
 
       $scope.polygon = new Polygon($scope.polygon.points);
+      var aabb = $scope.polygon.aabb();
       //Close Polygon
       $scope.polygon.insert($scope.polygon.point(0), $scope.polygon.length);
       //Bounding Box
