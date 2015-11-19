@@ -20,19 +20,18 @@
             left: 30
           };
           var rangeMax = Math.max(scope.bounding.w, scope.bounding.h);
-          rangeMax = Math.ceil(rangeMax / 10) * 10;
+          rangeMax = Math.ceil(rangeMax / 10) * 150;
           console.log(scope.size);
           console.log(rangeMax);
           scope.size.height = scope.size.width = rangeMax;
           var xScale = d3.scale.linear()
-            .domain([scope.bounding.x, scope.bounding.x + rangeMax])
+            .domain([scope.bounding.x, scope.bounding.x + scope.bounding.w])
             .range([0, scope.size.width]);
           var yScale = d3.scale.linear()
-            .domain([scope.bounding.y, scope.bounding.y + rangeMax])
+            .domain([scope.bounding.y, scope.bounding.y + scope.bounding.h])
             .range([scope.size.height, 0]);
 
-          console.log('x scale', xScale(102));
-          console.log('y scale', yScale(-102));
+
           var xAxis = d3.svg.axis()
             .scale(xScale)
             .orient("bottom")
